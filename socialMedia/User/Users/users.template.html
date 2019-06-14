@@ -1,0 +1,23 @@
+<div>
+    <div class="container width-800 card-body">
+        <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        <button class="btn btn-primary" type="button" name="searchButton" ng-click="viewUsers(1)">Search</button>
+    </div>
+    <div class="container width-800 card" dir-paginate="x in users |itemsPerPage:itemsPerPage" total-items="total_count"
+        current-page="pagination.current">
+        <div class="clearfix card-header">
+            <p class="float-left">{{x.first_name}}</p>
+            <p class="float-left">id :{{x.id}}</p>
+            <p class="float-right">{{x.last_name}}</p>
+            <p class="float-right">{{x.email}}</p>
+            <p class="float-right">{{x.name}}</p>
+        </div>
+        <div class="clearfix card-body">
+            <p class="card-text">{{x.first_name}}</p>
+            <a href="" class="btn btn-primary stretched-link" ng-click="viewUsersDetails(x.id)">See Profile</a>
+        </div>
+    </div>
+    <dir-pagination-controls class="container width-800" max-size="3" direction-links="true" boundary-links="true"
+        on-page-change="viewUsers(newPageNumber)" template-url="customTemplate.html">
+    </dir-pagination-controls>
+</div>

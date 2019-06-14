@@ -1,0 +1,31 @@
+{
+  "name": "social_media_webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "bower install; gulp; eslint",
+    "start": "http-server ./socialMedia -a localhost -p 8100 -c-1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "http-server": "^0.11.1",
+    "wiredep": "^4.0.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.8",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "gulp-inject": "^5.0.2",
+    "gulp-install": "^1.1.0",
+    "gulp-rename": "^1.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.jtg.tools:shivam.singh/social_media_webapp.git"
+  },
+  "keywords": [],
+  "description": ""
+}

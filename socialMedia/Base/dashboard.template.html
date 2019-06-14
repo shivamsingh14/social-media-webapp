@@ -1,0 +1,11 @@
+<div ng-if="!ongoing1">
+<div ng-if="verified">
+    <dashboard-header></dashboard-header>
+    <ui-view></ui-view>
+
+</div>
+<div ng-if="!verified">
+    <dashboard-unverified-header></dashboard-unverified-header>
+    <ui-view></ui-view>
+</div>
+</div>

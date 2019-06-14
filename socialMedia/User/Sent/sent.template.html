@@ -1,0 +1,11 @@
+<div>
+    <div ng-repeat = "x in sentRequests">
+        <p>{{x.request_from}}</p>
+        <p>{{x.request_to.id}}</p>
+        <p>{{x.request_to.first_name}}</p>
+        <p>{{x.request_to.last_name}}</p>
+        <p>{{x.request_to.gender}}</p>
+        <p>{{x.request_to.email}}</p>
+        <button class="btn btn-primary" ng-click=cancel($index)>Cancel</button>
+    </div>
+</div>

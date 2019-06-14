@@ -1,0 +1,30 @@
+<div style="margin-left:22%" class="container width-800 card clearfix card-body">
+
+        <p class="card-text">
+                <img class="loading" style="float:right"
+                        src="https://www.adcombi.com/wp-content/uploads/2015/02/round-profile-pic.png" height="155px">
+                Name : {{owner.first_name}}<br>
+                Id : {{owner.id}}<br>
+                Last Name : {{owner.last_name}}<br>
+                Gender : {{owner.gender}}<br><br>
+                <button ng-if="!currentUser" class="btn btn-primary" ng-click=update()>Update</button>
+                <button ng-if="currentUser" class="btn btn-primary" ng-disabled="followed"
+                        ng-click=follow()>{{followButton}}</button>
+        </p>
+</div>
+<div id="wrapper">
+
+        <ul id="unlist" style="list-style-type:none" ng-repeat="x in userPosts">
+                <li id="list">
+                        <input type="checkbox" checked>
+                        <i></i>
+
+                        <h3>{{x.content_text}}</h3>
+                        <p>{{x.id}}</p>
+                        <p>{{x.visibility}}</p>
+                        <p>{{x.content_image}}</p>
+                        <p><img ng-src="{{x.content_image}}" alt="no pic"></p>
+                        <p>{{x.owner.first_name}}</p>
+                </li>
+        </ul>
+</div>

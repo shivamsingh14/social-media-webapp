@@ -1,0 +1,19 @@
+<div ng-hide = "loading" id="wrapper"> 
+
+<ul id="unlist" style="list-style-type:none" ng-repeat = "x in posts"> 
+<li> 
+<input type="checkbox" checked> 
+<i></i> 
+<h3>{{x.content_text}}</h3> 
+<p>{{x.id}}</p> 
+<p><img ng-src="{{x.content_image}}" alt="no pic"></p>
+<p>{{x.owner.first_name}}</p>
+</li> 
+</ul>
+</div>
+
+<div ng-show = "loading">
+        <img class="loading" style="float:right"
+        src="https://www.adcombi.com/wp-content/uploads/2015/02/round-profile-pic.png" height="155px">
+
+</div>

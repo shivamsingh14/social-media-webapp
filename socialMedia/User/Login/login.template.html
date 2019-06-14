@@ -1,0 +1,24 @@
+<div>
+    <p ng-show="invalidCredentiails" class="container width span-error">Invalid Credentials</p>
+    <form class="container width" name="loginForm">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="email" autocomplete="off"
+                ng-model="userLoginOject.username" required>
+        </div>
+        <div ng-if="requiredErrorMessage || loginForm.email.$touched" ng-messages="loginForm.email.$error">
+            <div ng-messages-include="messages.html"></div>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="password"
+                ng-model="userLoginOject.password" required>
+        </div>
+        <div ng-if="requiredErrorMessage || loginForm.password.$touched" ng-messages="loginForm.password.$error"
+            class="span-error" role="alert">
+            <div ng-messages-include="messages.html"></div>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click=login() ng-disabled="Processing">{{loginButton}}</button>
+
+    </form>
+</div>

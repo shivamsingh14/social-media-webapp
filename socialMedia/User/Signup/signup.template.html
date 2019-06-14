@@ -1,0 +1,98 @@
+<div>
+
+    <form class="container" name="registrationForm" style="box-shadow:0 0 10px gray; margin-top:80px">
+        <div class="row" style="padding-top:30px">
+            <div class="form-group col-sm-6">
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" placeholder="Enter first Name" autocomplete="off"
+                    name="first_name" ng-model="userSignUpOject.first_name" required>
+                <div ng-if="requiredErrorMessage || registrationForm.first_name.$touched"
+                    ng-messages="registrationForm.first_name.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" placeholder="Enter last Name" autocomplete="off"
+                    name="last_name" ng-model="userSignUpOject.last_name">
+                <div ng-if="requiredErrorMessage || registrationForm.last_name.$touched"
+                    ng-messages="registrationForm.last_name.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="username">username:</label>
+                <input type="text" class="form-control" placeholder="Enter username" autocomplete="off" name="username"
+                    ng-model="userSignUpOject.username" required>
+                <div ng-if="requiredErrorMessage || registrationForm.username.$touched"
+                    ng-messages="registrationForm.username.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Enter email"
+                     name="email" ng-model="userSignUpOject.email"
+                    autocomplete="off" required>
+                <div ng-if="requiredErrorMessage || registrationForm.email.$touched"
+                    ng-messages="registrationForm.email.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" class="form-control" name="dateOfBirth" ng-model="userSignUpOject.date_of_birth">
+                <div ng-if="requiredErrorMessage || registrationForm.dateOfBirth.$touched"
+                    ng-messages="registrationForm.dateOfBirth.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+
+            </div>
+            <div class="form-group col-sm-6">
+                <label><b>Gender:</b></label>
+                <br>
+                <input type="radio" name="userGender" ng-value="'M'" ng-model="userSignUpOject.gender">
+                Male
+                <input type="radio" name="userGender" ng-value="'F'" ng-model="userSignUpOject.gender">
+                Female
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password" ng-minlength="8"
+                    name="password" ng-model="userSignUpOject.password" ng-focus="clearError('password')" required>
+                <div ng-if="requiredErrorMessage || registrationForm.password.$touched"
+                    ng-messages="registrationForm.password.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password again" name="confirm_password"
+                    ng-model="confirm_password" required>
+                <span class="span-error"
+                    ng-show="userSignUpOject.password != confirm_password && registrationForm.confirm_password.$touched">Passwords
+                    do not match.</span>
+                <div ng-if="requiredErrorMessage || registrationForm.confirm_password.$touched"
+                    ng-messages="registrationForm.confirm_password.$error">
+                    <div ng-messages-include="messages.html"></div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" style="margin-left: 34%; margin-bottom:20px; width:25%; margin-bottom: 20px;" class="btn btn-primary" ng-click=register()
+            ng-disabled="(userSignUpOject.password != confirm_password && registrationForm.password.$dirty && registrationForm.confirm_password.$dirty) || processing">
+            {{registerButton}}</button>
+    </form>
+
+</div>

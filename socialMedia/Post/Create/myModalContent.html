@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Create Post</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <input type="text" class="form-control" placeholder="Enter post's content" 
+    name="postText" ng-model="content_text" autocomplete="off"><br>
+    <select class="form-control" name="visibility" ng-model="visibility" >
+        <option ng-value=0>PRIVATE</option>
+        <option ng-value=1>ADDED USERS</option>
+        <option ng-value=2>FOLLOWING</option>
+        <option ng-value=3>PUBLIC</option>
+    </select><br>
+    <button class="btn btn-primary" type="button" ng-click="image()" ng-hide="uploadImage">Want to Upload Image?</button>
+    <div class="panel panel-default" ng-show="uploadImage">
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label for="myFileField">Select a file: </label>
+                        <input type="file" file-model="myFile"  class="form-control" id ="myFileField"/>
+                    </div>
+                    <button ng-click="uploadFile()" class = "btn btn-primary">Upload File</button>
+                </form>
+            </div>
+        </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="create()">Create</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
